@@ -1,0 +1,31 @@
+{
+  "knowledge_base": [
+    {
+      "id": "patente-vs-derecho-autor",
+      "source": "@legal_alternativo video 1",
+      "topic": "proteccion_software",
+      "key_insight": "Software en México: derecho de autor (INDAUTOR) protege código fuente como obra literaria. Patente (IMPI) solo aplica si resuelve problema de ingeniería con efecto técnico (NO métodos administrativos: delivery/ecommerce/contabilidad). Fórmula patente: novedad + actividad inventiva + efecto técnico.",
+      "applicable_to": ["fintech", "salud", "iot", "algoritmos"],
+      "ui_components": ["patent_warning_banner"],
+      "risk_alert": "⚠️ App delivery/ecommerce NO es patentable (artículo 47 IMPI)"
+    },
+    {
+      "id": "3-clausulas-saas-obligatorias",
+      "source": "@legal_alternativo video 2",
+      "topic": "contratos_saas",
+      "key_insight": "Contrato SaaS MÍNIMO requiere: 1) Licencia de uso no exclusiva (NO venta - 'presto la llave, la casa sigue siendo mía'), 2) Responsabilidad limitada (hasta monto pagado), 3) Portabilidad/borrado (días para descargar datos tras cancelación).",
+      "applicable_to": ["suscripcion", "freemium", "marketplace"],
+      "ui_components": ["license_clause_generator", "liability_limit_banner"],
+      "risk_alert": "🚨 Sin cláusula de licencia → cliente podría alegar propiedad del código"
+    },
+    {
+      "id": "secreto-industrial-vs-patente",
+      "source": "@legal_alternativo video 6",
+      "topic": "estrategia_proteccion",
+      "key_insight": "Secreto industrial: dura indefinido pero vulnerable a ingeniería inversa legal. Patente: 20 años pero protege aunque descubran el funcionamiento. Decisión estratégica: ¿qué conviene proteger y con qué herramienta?",
+      "applicable_to": ["algoritmos", "formulas", "procesos_unicos"],
+      "ui_components": ["protection_strategy_selector"],
+      "risk_alert": "⚠️ Secreto industrial sin NDA → riesgo alto de fuga legal"
+    }
+  ]
+}

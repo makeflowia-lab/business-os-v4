@@ -1,0 +1,418 @@
+{
+    "stats": {
+        "total_files": 45813,
+        "total_dirs": 3608,
+        "total_py_files": 9
+    },
+    "semantic_analysis": {
+        "D:\\SaaS-legal\\node_modules\\katex\\src\\fonts\\generate_fonts.py": {
+            "functions": [],
+            "classes": []
+        },
+        "D:\\SaaS-legal\\node_modules\\katex\\src\\metrics\\extract_tfms.py": {
+            "functions": [
+                {
+                    "name": "find_font_path",
+                    "lines": 2,
+                    "args": [
+                        "font_name"
+                    ]
+                },
+                {
+                    "name": "main",
+                    "lines": 8,
+                    "args": []
+                }
+            ],
+            "classes": []
+        },
+        "D:\\SaaS-legal\\node_modules\\katex\\src\\metrics\\extract_ttfs.py": {
+            "functions": [
+                {
+                    "name": "main",
+                    "lines": 3,
+                    "args": []
+                }
+            ],
+            "classes": []
+        },
+        "D:\\SaaS-legal\\node_modules\\katex\\src\\metrics\\format_json.py": {
+            "functions": [],
+            "classes": []
+        },
+        "D:\\SaaS-legal\\node_modules\\katex\\src\\metrics\\parse_tfm.py": {
+            "functions": [
+                {
+                    "name": "read_tfm_file",
+                    "lines": 1,
+                    "args": [
+                        "file_name"
+                    ]
+                },
+                {
+                    "name": "__init__",
+                    "lines": 7,
+                    "args": [
+                        "self",
+                        "word"
+                    ]
+                },
+                {
+                    "name": "has_ligkern",
+                    "lines": 1,
+                    "args": [
+                        "self"
+                    ]
+                },
+                {
+                    "name": "ligkern_start",
+                    "lines": 1,
+                    "args": [
+                        "self"
+                    ]
+                },
+                {
+                    "name": "__init__",
+                    "lines": 1,
+                    "args": [
+                        "self",
+                        "program"
+                    ]
+                },
+                {
+                    "name": "execute",
+                    "lines": 2,
+                    "args": [
+                        "self",
+                        "start",
+                        "next_char"
+                    ]
+                },
+                {
+                    "name": "__init__",
+                    "lines": 5,
+                    "args": [
+                        "self",
+                        "width",
+                        "height",
+                        "depth",
+                        "italic",
+                        "kern_table"
+                    ]
+                },
+                {
+                    "name": "__init__",
+                    "lines": 9,
+                    "args": [
+                        "self",
+                        "start_char",
+                        "end_char",
+                        "char_info",
+                        "width_table",
+                        "height_table",
+                        "depth_table",
+                        "italic_table",
+                        "ligkern_table",
+                        "kern_table"
+                    ]
+                },
+                {
+                    "name": "get_char_metrics",
+                    "lines": 6,
+                    "args": [
+                        "self",
+                        "char_num",
+                        "fix_rsfs"
+                    ]
+                },
+                {
+                    "name": "__init__",
+                    "lines": 1,
+                    "args": [
+                        "self",
+                        "f"
+                    ]
+                },
+                {
+                    "name": "read_byte",
+                    "lines": 1,
+                    "args": [
+                        "self"
+                    ]
+                },
+                {
+                    "name": "read_halfword",
+                    "lines": 3,
+                    "args": [
+                        "self"
+                    ]
+                },
+                {
+                    "name": "read_word",
+                    "lines": 5,
+                    "args": [
+                        "self"
+                    ]
+                },
+                {
+                    "name": "read_fixword",
+                    "lines": 4,
+                    "args": [
+                        "self"
+                    ]
+                },
+                {
+                    "name": "read_bcpl",
+                    "lines": 3,
+                    "args": [
+                        "self",
+                        "length"
+                    ]
+                }
+            ],
+            "classes": [
+                {
+                    "name": "CharInfoWord",
+                    "methods": [
+                        "__init__",
+                        "has_ligkern",
+                        "ligkern_start"
+                    ]
+                },
+                {
+                    "name": "LigKernProgram",
+                    "methods": [
+                        "__init__",
+                        "execute"
+                    ]
+                },
+                {
+                    "name": "TfmCharMetrics",
+                    "methods": [
+                        "__init__"
+                    ]
+                },
+                {
+                    "name": "TfmFile",
+                    "methods": [
+                        "__init__",
+                        "get_char_metrics"
+                    ]
+                },
+                {
+                    "name": "TfmReader",
+                    "methods": [
+                        "__init__",
+                        "read_byte",
+                        "read_halfword",
+                        "read_word",
+                        "read_fixword",
+                        "read_bcpl"
+                    ]
+                }
+            ]
+        },
+        "D:\\SaaS-legal\\node_modules\\flatted\\python\\flatted.py": {
+            "functions": [
+                {
+                    "name": "_array_keys",
+                    "lines": 4,
+                    "args": [
+                        "value"
+                    ]
+                },
+                {
+                    "name": "_object_keys",
+                    "lines": 3,
+                    "args": [
+                        "value"
+                    ]
+                },
+                {
+                    "name": "_is_array",
+                    "lines": 1,
+                    "args": [
+                        "value"
+                    ]
+                },
+                {
+                    "name": "_is_object",
+                    "lines": 1,
+                    "args": [
+                        "value"
+                    ]
+                },
+                {
+                    "name": "_is_string",
+                    "lines": 1,
+                    "args": [
+                        "value"
+                    ]
+                },
+                {
+                    "name": "_index",
+                    "lines": 5,
+                    "args": [
+                        "known",
+                        "input",
+                        "value"
+                    ]
+                },
+                {
+                    "name": "_loop",
+                    "lines": 2,
+                    "args": [
+                        "keys",
+                        "input",
+                        "known",
+                        "output"
+                    ]
+                },
+                {
+                    "name": "_ref",
+                    "lines": 2,
+                    "args": [
+                        "key",
+                        "value",
+                        "input",
+                        "known",
+                        "output"
+                    ]
+                },
+                {
+                    "name": "_relate",
+                    "lines": 2,
+                    "args": [
+                        "known",
+                        "input",
+                        "value"
+                    ]
+                },
+                {
+                    "name": "_transform",
+                    "lines": 3,
+                    "args": [
+                        "known",
+                        "input",
+                        "value"
+                    ]
+                },
+                {
+                    "name": "_wrap",
+                    "lines": 3,
+                    "args": [
+                        "value"
+                    ]
+                },
+                {
+                    "name": "parse",
+                    "lines": 9,
+                    "args": [
+                        "value"
+                    ]
+                },
+                {
+                    "name": "stringify",
+                    "lines": 6,
+                    "args": [
+                        "value"
+                    ]
+                },
+                {
+                    "name": "__init__",
+                    "lines": 2,
+                    "args": [
+                        "self"
+                    ]
+                },
+                {
+                    "name": "__init__",
+                    "lines": 1,
+                    "args": [
+                        "self",
+                        "value"
+                    ]
+                }
+            ],
+            "classes": [
+                {
+                    "name": "_Known",
+                    "methods": [
+                        "__init__"
+                    ]
+                },
+                {
+                    "name": "_String",
+                    "methods": [
+                        "__init__"
+                    ]
+                }
+            ]
+        },
+        "D:\\SaaS-legal\\.claude\\skills\\skill-creator\\scripts\\init_skill.py": {
+            "functions": [
+                {
+                    "name": "create_skill",
+                    "lines": 20,
+                    "args": [
+                        "name",
+                        "path"
+                    ]
+                },
+                {
+                    "name": "main",
+                    "lines": 7,
+                    "args": []
+                }
+            ],
+            "classes": []
+        },
+        "D:\\SaaS-legal\\.claude\\skills\\skill-creator\\scripts\\package_skill.py": {
+            "functions": [
+                {
+                    "name": "validate_before_package",
+                    "lines": 4,
+                    "args": [
+                        "skill_path"
+                    ]
+                },
+                {
+                    "name": "package_skill",
+                    "lines": 9,
+                    "args": [
+                        "skill_path",
+                        "output_dir"
+                    ]
+                },
+                {
+                    "name": "main",
+                    "lines": 6,
+                    "args": []
+                }
+            ],
+            "classes": []
+        },
+        "D:\\SaaS-legal\\.claude\\skills\\skill-creator\\scripts\\quick_validate.py": {
+            "functions": [
+                {
+                    "name": "validate_skill",
+                    "lines": 14,
+                    "args": [
+                        "skill_path"
+                    ]
+                },
+                {
+                    "name": "main",
+                    "lines": 6,
+                    "args": []
+                }
+            ],
+            "classes": []
+        }
+    },
+    "recommendations": [
+        "No se detectaron problemas cr\u00edticos. Buen trabajo!"
+    ],
+    "critical_alerts": [],
+    "generated_at": "2026-02-24T13:05:23.273198"
+}

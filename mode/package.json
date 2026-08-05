@@ -1,0 +1,48 @@
+{
+  "name": "mode",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Makeflowia Lab",
+  "license": "BO-AT-1.0",
+  "bo_origen": "Basado en el Business OS, creado por Makeflowia Lab.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd saas-platform && npm run dev",
+    "build": "cd saas-platform && npm run build",
+    "start": "cd saas-platform && npm run start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "dependencies": {
+    "@prisma/client": "^7.5.0",
+    "bcryptjs": "^3.0.3",
+    "clsx": "^2.1.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "fs-extra": "^11.3.4",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "lucide-react": "^0.577.0",
+    "markdown-it": "^14.1.1",
+    "pdfkit": "^0.17.2",
+    "pino": "^10.3.1",
+    "shadcn-ui": "^0.9.5",
+    "tailwind-merge": "^3.5.0",
+    "zod": "^4.3.6",
+    "zustand": "^5.0.11"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/fs-extra": "^11.0.4",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^25.4.0",
+    "@types/pdfkit": "^0.17.5",
+    "prisma": "^7.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

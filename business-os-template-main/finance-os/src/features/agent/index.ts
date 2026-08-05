@@ -1,0 +1,5 @@
+export * from './components'
+export { useAgentHistory } from './hooks/useAgentHistory'
+export { useImageUpload } from './hooks/useImageUpload'
+export { agentHistoryService } from './services/historyService'
+export type { AgentSession, AgentActionRecord } from './services/historyService'

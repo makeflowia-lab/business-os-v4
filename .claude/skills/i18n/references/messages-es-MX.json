@@ -1,0 +1,32 @@
+{
+  "common": {
+    "appName": "{{nombre_app}}",
+    "loading": "Cargando...",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "continue": "Continuar",
+    "back": "Regresar",
+    "error": "Ocurrio un error. Intenta de nuevo."
+  },
+  "auth": {
+    "login": "Iniciar sesion",
+    "signup": "Crear cuenta",
+    "logout": "Cerrar sesion",
+    "email": "Correo electronico",
+    "password": "Contrasena",
+    "forgotPassword": "Olvidaste tu contrasena?"
+  },
+  "onboarding": {
+    "welcome": "Bienvenido a {{nombre_app}}",
+    "emptyState": "Aun no tienes nada aqui.",
+    "firstAction": "Crea tu primer elemento — toma 30 segundos",
+    "checklistTitle": "Primeros pasos"
+  },
+  "legal": {
+    "privacy": "Aviso de privacidad",
+    "terms": "Terminos y condiciones",
+    "cookies": "Usamos cookies para mejorar tu experiencia.",
+    "acceptCookies": "Aceptar",
+    "rejectCookies": "Rechazar"
+  }
+}

@@ -1,0 +1,17 @@
+ANTIGRAVITY_AI – INFORME DE AUDITORÍA
+
+Proyecto: ANTIGRAVITY_AI
+Archivos analizados: 2726
+
+STACK DETECTADO:
+ - Python
+
+FRAMEWORKS DETECTADOS:
+ - FastAPI
+
+NIVEL DE MADUREZ: Avanzado
+
+RECOMENDACIONES:
+ - Añadir pruebas automatizadas
+ - Preparar Docker
+ - Documentar arquitectura

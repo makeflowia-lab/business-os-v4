@@ -1,0 +1,50 @@
+{
+  "knowledge_base": [
+    {
+      "id": "patente_vs_derecho_autor",
+      "topic": "proteccion_software",
+      "key_rule": "Software en México tiene doble protección: INDAUTOR (derecho de autor) protege código fuente como obra literaria (vida autor + 100 años). IMPI (patente) SOLO aplica si resuelve problema de ingeniería con efecto técnico (NO métodos administrativos: delivery/ecommerce/contabilidad). Fórmula patente: novedad + actividad inventiva + efecto técnico.",
+      "examples_no_patente": ["app delivery", "e-commerce", "sistema contabilidad"],
+      "examples_si_patente": ["algoritmo optimiza batería 40%", "IA detecta fallas motores por sonido", "nuevo protocolo encriptación"],
+      "ui_requirement": "Mostrar alerta si industria=delivery/ecommerce/contabilidad: '⚠️ Modelo NO patentable (art. 47 IMPI). Protege con INDAUTOR + NDA'"
+    },
+    {
+      "id": "3_clausulas_saas_obligatorias",
+      "topic": "contratos_saas",
+      "key_rule": "Contrato SaaS MÍNIMO requiere 3 cláusulas: 1) Licencia de uso NO exclusiva (NO venta - 'presto llave, propiedad intelectual sigue siendo mía'), 2) Responsabilidad limitada (máximo hasta monto pagado por cliente), 3) Portabilidad/borrado (días específicos para descargar datos tras cancelación).",
+      "risk_if_missing": "Sin cláusula licencia → cliente podría alegar propiedad código. Sin límite responsabilidad → demanda millonaria por caída servidor. Sin portabilidad → violación LFPDPPP.",
+      "ui_requirement": "Generar snippet TSX para cláusula licencia: 'Licenciatario recibe licencia no exclusiva, revocable y no transferible. Licenciante conserva todos derechos PI sobre código fuente, estructura y funcionalidades.'"
+    },
+    {
+      "id": "secreto_industrial_vs_patente",
+      "topic": "estrategia_proteccion",
+      "key_rule": "Secreto industrial: dura indefinido pero vulnerable a ingeniería inversa LEGAL (desarmar/analizar producto sin hackear). Patente: 20 años pero protege aunque descubran funcionamiento. Secreto solo protege contra robo/espionaje (ej: empleado revela sin permiso).",
+      "strategic_question": "¿Qué conviene proteger y con qué herramienta? No preguntes '¿qué puedo registrar?' sino '¿qué me conviene proteger y cómo?'",
+      "ui_requirement": "Selector UI: 'Protección recomendada: [ ] Secreto industrial (requiere NDA estricto) [ ] Patente (requiere divulgación pública) [ ] Ambas (capas complementarias)'"
+    },
+    {
+      "id": "derecho_autor_limites",
+      "topic": "proteccion_codigo",
+      "key_rule": "INDAUTOR protege FORMA (cómo escribiste código) NO IDEA (qué hace programa). Si alguien ve tu app funcionando y programa desde cero con otra lógica → competencia legítima (no plagio). Si alguien ve tu código y traduce a otro lenguaje manteniendo estructura/variables/lógica → obra derivada (plagio).",
+      "defense_layers": "Nivel 1: Obra derivada (estructura creativa copiada). Nivel 2: NDA/acuerdo confidencialidad (protección contractual más fuerte). Nivel 3: Competencia legítima (no hay defensa sin patente).",
+      "ui_requirement": "Alerta: 'INDAUTOR es acta de nacimiento (prueba eres creador) pero NO evita competencia. Combina con: 1) NDA para empleados/socios, 2) Control acceso código, 3) Evaluación patentabilidad para algoritmos técnicos'"
+    },
+    {
+      "id": "lfpdppp_2025_requisitos",
+      "topic": "proteccion_datos",
+      "key_rule": "LFPDPPP 2025 (vigente marzo 2025) requiere: 1) Aviso privacidad SIMPLIFICADO (máx 300 chars en landing), 2) Aviso privacidad INTEGRAL (link accesible con todos detalles), 3) Consentimiento EXPLÍCITO (checkbox NO pre-marcado), 4) Mecanismos ARCO (Acceso, Rectificación, Cancelación, Oposición) con respuesta en 20 días hábiles.",
+      "high_risk_scenario": "App educativa que busca/exporta datos personas a Excel: requiere verificación fuente pública/licenciada + checkbox explícito 'Confirmo uso solo fines educativos/personales autorizados' + bloqueo exportación masiva (>50 registros) + logs búsqueda/exportación para auditoría INAI.",
+      "ui_requirement": "Componente ConsentBanner con: checkbox NO pre-marcado, botón 'Aceptar y continuar' primario, botón 'Configurar preferencias' secundario, link aviso integral, icono 🔒 + texto 'Tus datos están protegidos'"
+    }
+  ],
+  "risk_classification_rules": {
+    "ALTO": ["industria=salud/fintech", "datos=sensibles/financieros/biométricos", "usuarios=>100k", "exporta_datos_masivos"],
+    "MEDIO": ["industria=ecommerce/delivery/educacion", "datos=personales_basicos", "usuarios=1k-100k"],
+    "BAJO": ["industria=herramientas_creativas", "datos=no_personales", "usuarios=<1k"]
+  },
+  "compliance_timeline": {
+    "dias_1_7_criticos": ["Banner consentimiento explícito", "Aviso privacidad simplificado", "Cláusula licencia uso"],
+    "dias_8_21_importantes": ["Sección ARCO", "Cifrado AES-256 datos sensibles", "Logs acceso datos"],
+    "dias_22_30_optimizacion": ["Registro INDAUTOR código", "Registro INAI (>100k usuarios)", "Auditoría legal externa"]
+  }
+}

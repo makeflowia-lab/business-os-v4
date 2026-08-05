@@ -1,0 +1,32 @@
+# dependencias
+node_modules
+
+# secretos / variables de entorno locales — NUNCA commitear
+.env
+.env*.local
+# (se conservan los .env*.example como plantilla)
+
+# build / salida de Next.js
+.next
+out
+build
+*.tsbuildinfo
+
+# despliegue
+.vercel
+
+# logs
+*.log
+npm-debug.log*
+
+# sistema
+.DS_Store
+Thumbs.db
+
+# secretos de configuración local de Claude Code — puede contener API keys
+.claude/settings.local.json
+
+# python
+__pycache__/
+*.pyc
+venv/

@@ -1,0 +1,147 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum DeploymentMode {
+  CLOUD
+  VPS
+  LOCAL
+}
+
+enum UserRole {
+  SUPERADMIN
+  ADMIN
+  USER
+}
+
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  CLOSED
+}
+
+enum PlanType {
+  FREE
+  BASIC
+  PRO
+  ENTERPRISE
+}
+
+model Tenant {
+  id                String         @id @default(cuid())
+  name              String
+  domain            String?        @unique
+  deploymentMode    DeploymentMode @default(CLOUD)
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+  
+  // Cloud Mode Features
+  subscription      Subscription?
+  
+  // VPS Mode Features
+  vpsConfig         VPSConfig?
+  
+  // Local Mode Features
+  license           License?
+  
+  users             User[]
+  tickets           SupportTicket[]
+  backups           Backup[]
+  billingLogs       BillingLog[]
+}
+
+model User {
+  id                String         @id @default(cuid())
+  email             String         @unique
+  password          String
+  name              String?
+  role              UserRole       @default(USER)
+  tenantId          String
+  tenant            Tenant         @relation(fields: [tenantId], references: [id])
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+  
+  sessions          Session[]
+}
+
+model Session {
+  id                String         @id @default(cuid())
+  userId            String
+  user              User           @relation(fields: [userId], references: [id])
+  token             String         @unique
+  expiresAt         DateTime
+  createdAt         DateTime       @default(now())
+}
+
+model Subscription {
+  id                String         @id @default(cuid())
+  tenantId          String         @unique
+  tenant            Tenant         @relation(fields: [tenantId], references: [id])
+  plan              PlanType       @default(BASIC)
+  status            String         // active, past_due, canceled
+  currentPeriodEnd  DateTime
+}
+
+model VPSConfig {
+  id                String         @id @default(cuid())
+  tenantId          String         @unique
+  tenant            Tenant         @relation(fields: [tenantId], references: [id])
+  ipAddress         String
+  os                String
+  sshKey            String?
+  url               String
+  deployedAt        DateTime?
+}
+
+model License {
+  id                String         @id @default(cuid())
+  tenantId          String         @unique
+  tenant            Tenant         @relation(fields: [tenantId], references: [id])
+  key               String         @unique
+  activatedAt       DateTime?
+  expiresAt         DateTime?
+  machineId         String?        // Hardware ID for local activation
+}
+
+model SupportTicket {
+  id                String         @id @default(cuid())
+  tenantId          String
+  tenant            Tenant         @relation(fields: [tenantId], references: [id])
+  subject           String
+  description       String
+  status            TicketStatus   @default(OPEN)
+  priority          String         @default("MEDIUM")
+  email             String
+  responseAt        DateTime?
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+}
+
+model Backup {
+  id                String         @id @default(cuid())
+  tenantId          String
+  tenant            Tenant         @relation(fields: [tenantId], references: [id])
+  fileName          String
+  fileSize          BigInt
+  storageLocation   String         // LOCAL, CLOUD
+  status            String         // SUCCESS, FAILED
+  createdAt         DateTime       @default(now())
+}
+
+model BillingLog {
+  id                String         @id @default(cuid())
+  tenantId          String
+  tenant            Tenant         @relation(fields: [tenantId], references: [id])
+  amount            Float
+  currency          String         @default("USD")
+  description       String
+  status            String         // PAID, PENDING
+  createdAt         DateTime       @default(now())
+}

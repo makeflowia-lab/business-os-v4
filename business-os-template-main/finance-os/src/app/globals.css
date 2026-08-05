@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Profits OS - Neumorphism Theme
+ */
+
+:root {
+  --neu-bg: #e6e7ee;
+  --neu-dark: #b8b9be;
+  --neu-light: #ffffff;
+  --neu-text: #4a5568;
+  --neu-text-muted: #718096;
+  --neu-accent: #3b82f6;
+  --neu-success: #10b981;
+  --neu-warning: #f59e0b;
+  --neu-danger: #ef4444;
+}
+
+body {
+  background-color: var(--neu-bg);
+  color: var(--neu-text);
+}

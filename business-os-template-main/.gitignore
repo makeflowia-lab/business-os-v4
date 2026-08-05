@@ -1,0 +1,46 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode
+.idea
+*.swp
+
+# Node
+node_modules/
+
+# Env
+.env
+.env.local
+.env*.local
+
+# Vercel
+.vercel
+
+# Build artifacts
+.next/
+dist/
+*.tsbuildinfo
+
+# Playwright MCP artifacts
+.playwright-mcp/
+
+# Screenshots (local testing)
+*.png
+# Allow PWA icon PNGs
+!Mission-Control/public/apple-touch-icon.png
+!Mission-Control/public/icon-*.png
+
+# Claude MCP config (contains local paths)
+.mcp.json
+
+# Agent server runtime
+store/
+workspace/
+*.log
+*.pid
+
+# Large media
+*.mp4
+*.mov

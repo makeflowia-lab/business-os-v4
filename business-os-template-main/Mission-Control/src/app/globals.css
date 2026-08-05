@@ -1,0 +1,116 @@
+@import 'tailwindcss';
+@import 'highlight.js/styles/github-dark-dimmed.css';
+
+/* Override hljs background so code bubbles control their own bg */
+.hljs { background: transparent !important; }
+
+/* iOS PWA only: force web view to extend behind home indicator.
+   Scoped to standalone so it doesn't affect desktop browsers. */
+@media (display-mode: standalone) {
+  html {
+    min-height: calc(100% + env(safe-area-inset-top));
+  }
+}
+
+html, body {
+  background-color: #0a0a0f;
+  margin: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+/* Safe-area bottom spacer (home indicator on notched iPhones) */
+.safe-area-spacer {
+  height: env(safe-area-inset-bottom, 0px);
+}
+
+/* Kill spacer when keyboard is open — CSS :has() reacts instantly to focus,
+   no JS timing delay. The .keyboard-open class is a fallback. */
+.keyboard-open .safe-area-spacer,
+:root:has(textarea:focus, input:focus, [contenteditable]:focus) .safe-area-spacer {
+  height: 0px !important;
+}
+
+/* Global audio bar entrance */
+@keyframes audioBarIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Dark scrollbars — matches the app's dark theme */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255 255 255 / 0.1) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Markdown preview in task descriptions */
+.md-preview h1, .md-preview h2, .md-preview h3, .md-preview h4 {
+  color: rgba(255 255 255 / 0.85);
+  font-weight: 600;
+  margin-top: 1em;
+  margin-bottom: 0.4em;
+}
+.md-preview h1 { font-size: 1.25rem; }
+.md-preview h2 { font-size: 1.1rem; }
+.md-preview h3 { font-size: 1rem; }
+.md-preview p { margin-bottom: 0.5em; }
+.md-preview strong { color: rgba(255 255 255 / 0.75); }
+.md-preview ul, .md-preview ol { padding-left: 1.25em; margin-bottom: 0.5em; }
+.md-preview li { margin-bottom: 0.15em; }
+.md-preview li::marker { color: rgba(255 255 255 / 0.3); }
+.md-preview a { color: #60a5fa; text-decoration: underline; }
+.md-preview code {
+  background: rgba(255 255 255 / 0.08);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+.md-preview pre {
+  background: rgba(255 255 255 / 0.06);
+  border-radius: 8px;
+  padding: 0.75em 1em;
+  overflow-x: auto;
+  margin-bottom: 0.75em;
+}
+.md-preview pre code { background: none; padding: 0; }
+.md-preview blockquote {
+  border-left: 3px solid rgba(255 255 255 / 0.15);
+  padding-left: 0.75em;
+  color: rgba(255 255 255 / 0.45);
+  margin: 0.5em 0;
+}
+.md-preview hr {
+  border: none;
+  border-top: 1px solid rgba(255 255 255 / 0.1);
+  margin: 0.75em 0;
+}
+.md-preview table { width: 100%; border-collapse: collapse; margin-bottom: 0.75em; }
+.md-preview th, .md-preview td {
+  border: 1px solid rgba(255 255 255 / 0.1);
+  padding: 0.35em 0.6em;
+  text-align: left;
+  font-size: 0.85em;
+}
+.md-preview th { color: rgba(255 255 255 / 0.7); background: rgba(255 255 255 / 0.04); }
